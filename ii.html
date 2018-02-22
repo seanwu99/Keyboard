@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Virtual Keyboard</title>
+
+    <!-- jQuery (required) & jQuery UI + theme (optional) -->
+    <!--<link href="docs/css/jquery-ui.min.css" rel="stylesheet">-->
+    <!-- still using jQuery v2.2.4 because Bootstrap doesn't support v3+ -->
+    <script src="docs/js/jquery-latest.min.js"></script>
+    <!--<script src="docs/js/jquery-ui.min.js"></script>-->
+    <!-- <script src="docs/js/jquery-migrate-3.0.0.min.js"></script> -->
+
+    <!-- keyboard widget css & script (required) -->
+    <link href="mottie/keyboard.css" rel="stylesheet">
+    <script src="mottie/jquery.keyboard.js"></script>
+
+    <!-- keyboard extensions (optional) -->
+    <!--<script src="js/jquery.mousewheel.js"></script>-->
+    <!--<script src="js/jquery.keyboard.extension-typing.js"></script>-->
+    <!--<script src="js/jquery.keyboard.extension-autocomplete.js"></script>-->
+    <!--<script src="js/jquery.keyboard.extension-caret.js"></script>-->
+
+    <!-- demo only -->
+    <!--<link rel="stylesheet" href="docs/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="docs/css/font-awesome.min.css">-->
+    <!--<link href="docs/css/demo.css" rel="stylesheet">-->
+    <!--<link href="docs/css/tipsy.css" rel="stylesheet">-->
+    <!--<link href="docs/css/prettify.css" rel="stylesheet">-->
+    <!--<script src="docs/js/bootstrap.min.js"></script>-->
+    <!--<script src="demo.js"></script>-->
+    <!--<script src="docs/js/jquery.tipsy.min.js"></script>-->
+    <!--<script src="docs/js/prettify.js"></script> &lt;!&ndash; syntax highlighting &ndash;&gt;-->
+    <style>
+        .ui-keyboard span {
+            font-size: 3.1em;
+        }
+
+        .ui-keyboard-button {
+            height: 5em;
+            width: 5em;
+            margin: .1em;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.hiddenInput').click(function () {
+                $('#hidden').data('keyboard').reveal();
+                return false;
+            });
+            // Initialize keyboard script on hidden input
+            // set "position.of" to the same link as above
+            $('#hidden').keyboard({
+                layout: 'num',
+                // position: {
+                //     of: $('.hiddenInput'),
+                //     my: 'center top',
+                //     at: 'center top'
+                // }
+                position: {
+                    of: null,// $(window), // null = attach to input/textarea; use $(sel) to attach elsewhere
+                    my: 'center top',
+                    at: 'center top',
+                    at2: 'center bottom' // used when "usePreview" is false
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<div id="page-wrap">
+
+
+    <div class="block">
+        <h2>
+            <span class="tooltip-tipsy" title="Click, then scroll down to see this code">Custom: Hidden</span>
+        </h2>
+        <a href="#" class="hiddenInput">Hidden input</a>
+        <!-- DON'T use type="hidden" because IE doesn't like hidden inputs -->
+        <input id="hidden" type="text" style="display:none;">
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
