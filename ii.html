@@ -3,12 +3,18 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Virtual Keyboard</title>
+    <title>Keyboard</title>
 
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_goldreflection"
+            data-sap-ui-libs="sap.ui.core,sap.ui.commons,sap.ui.table,sap.ui.ux3"
+            data-sap-ui-language="en">
+    </script>
     <!-- jQuery (required) & jQuery UI + theme (optional) -->
     <!--<link href="docs/css/jquery-ui.min.css" rel="stylesheet">-->
     <!-- still using jQuery v2.2.4 because Bootstrap doesn't support v3+ -->
-    <script src="docs/js/jquery-latest.min.js"></script>
+    <!--<script src="docs/js/jquery-latest.min.js"></script>-->
     <!--<script src="docs/js/jquery-ui.min.js"></script>-->
     <!-- <script src="docs/js/jquery-migrate-3.0.0.min.js"></script> -->
 
@@ -33,16 +39,16 @@
     <!--<script src="docs/js/jquery.tipsy.min.js"></script>-->
     <!--<script src="docs/js/prettify.js"></script> &lt;!&ndash; syntax highlighting &ndash;&gt;-->
     <style>
-        .ui-keyboard span {
-            font-size: 3.1em;
-        }
+        /*.ui-keyboard span {*/
+        /*font-size: 1.1em;*/
+        /*}*/
 
-        .ui-keyboard-button {
-            height: 5em;
-            width: 5em;
-            margin: .1em;
-            cursor: pointer;
-        }
+        /*.ui-keyboard-button {*/
+        /*height: 2em;*/
+        /*width: 2em;*/
+        /*margin: .1em;*/
+        /*cursor: pointer;*/
+        /*}*/
     </style>
     <script>
         $(function () {
@@ -60,7 +66,7 @@
                 //     at: 'center top'
                 // }
                 position: {
-                    of: null,// $(window), // null = attach to input/textarea; use $(sel) to attach elsewhere
+                    of: $('.hiddenInput'),//null,// $(window), // null = attach to input/textarea; use $(sel) to attach elsewhere
                     my: 'center top',
                     at: 'center top',
                     at2: 'center bottom' // used when "usePreview" is false
